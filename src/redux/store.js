@@ -1,11 +1,8 @@
-import React from 'react';
-import { createStore } from 'redux';
-const store = createStore() => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
+import React from "react";
+import { legacy_createStore as createStore } from "redux";
+import { rootReducer } from "./reducer";
+import { composeWithDevTools } from "redux-devtools-extension";
+const composedEnhancers = composeWithDevTools();
+const store = createStore(rootReducer, composedEnhancers);
 
 export default store;
